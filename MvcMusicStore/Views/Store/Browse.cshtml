@@ -1,0 +1,15 @@
+﻿@model MvcMusicStore.ViewModel.StoreBrowseViewModel
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<p>Browsing Genre: @Model.Genre.Name</p>
+
+<ul>
+    @foreach (var album in Model.Albums) {
+        <li>@album.Title</li>
+    }
+</ul>
