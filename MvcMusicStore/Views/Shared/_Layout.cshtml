@@ -1,48 +1,25 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        <title>@ViewBag.Title</title>
+        <link href="@Url.Content("~/Content/Site.css")"
+    rel="stylesheet" type="text/css" />
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"
+    type="text/javascript"></script>
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Store", "Index", "Store")</li>
-                            <li>@Html.ActionLink("Store Browse", "Browse", "Store")</li>
-                            <li>@Html.ActionLink("Store Details", "Details", "Store")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+        <div id="header">
+            <h1>
+                ASP.NET MVC MUSIC STORE</h1>
+            <ul id="navlist">
+                <li class="first">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Genres", "Index", "Store")</li>
+                <li>@Html.ActionLink("Albums by Genre", "Browse", "Store")</li>
+                <li>@Html.ActionLink("Album Details", "Details", "Store")</li>
+            </ul>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+        @RenderBody()
     </body>
 </html>
+
+                

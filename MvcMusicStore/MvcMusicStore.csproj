@@ -167,18 +167,34 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310201843108_Initial.cs" />
+    <Compile Include="Migrations\201310201843108_Initial.Designer.cs">
+      <DependentUpon>201310201843108_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Album.cs" />
+    <Compile Include="Models\Artist.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\MusicStoreEntities.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
+    <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\StoreBrowseViewModel.cs" />
     <Compile Include="ViewModel\StoreIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\home-showcase.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\placeholder.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -281,12 +297,22 @@
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\StoreManager\Details.cshtml" />
+    <Content Include="Views\StoreManager\Create.cshtml" />
+    <Content Include="Views\StoreManager\Edit.cshtml" />
+    <Content Include="Views\StoreManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201310201843108_Initial.resx">
+      <DependentUpon>201310201843108_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
