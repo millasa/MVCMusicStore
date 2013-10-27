@@ -62,10 +62,10 @@ namespace MvcMusicStore.Controllers
             {
                 Message = Server.HtmlEncode(albumName) +
                     " has been removed from your shopping cart.",
-                CartTotal = cart.GetTotal(),
-                CartCount = cart.GetCount(),
-                ItemCount = itemCount,
-                DeleteId = id
+                    CartTotal = cart.GetTotal(),
+                    CartCount = cart.GetCount(),
+                    ItemCount = itemCount,
+                    DeleteId = id
             };
             return Json(results);
         }

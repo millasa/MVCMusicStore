@@ -165,6 +165,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -176,6 +177,10 @@
     <Compile Include="Migrations\201310201843108_Initial.cs" />
     <Compile Include="Migrations\201310201843108_Initial.Designer.cs">
       <DependentUpon>201310201843108_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310271832118_OrderModelUpdate.cs" />
+    <Compile Include="Migrations\201310271832118_OrderModelUpdate.Designer.cs">
+      <DependentUpon>201310271832118_OrderModelUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -306,6 +311,10 @@
     <Content Include="Views\StoreManager\Edit.cshtml" />
     <Content Include="Views\StoreManager\Delete.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\Store\GenreMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,6 +325,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201310201843108_Initial.resx">
       <DependentUpon>201310201843108_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310271832118_OrderModelUpdate.resx">
+      <DependentUpon>201310271832118_OrderModelUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
