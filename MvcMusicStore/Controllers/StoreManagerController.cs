@@ -10,17 +10,11 @@ namespace MvcMusicStore.Controllers
     {
         private MusicStoreEntities db = new MusicStoreEntities();
 
-        //
-        // GET: /StoreManager/
-
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Genre).Include(a => a.Artist);
             return View(albums.ToList());
         }
-
-        //
-        // GET: /StoreManager/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -32,18 +26,12 @@ namespace MvcMusicStore.Controllers
             return View(album);
         }
 
-        //
-        // GET: /StoreManager/Create
-
         public ActionResult Create()
         {
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name");
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name");
             return View();
         }
-
-        //
-        // POST: /StoreManager/Create
 
         [HttpPost]
         public ActionResult Create(Album album)
@@ -60,9 +48,6 @@ namespace MvcMusicStore.Controllers
             return View(album);
         }
 
-        //
-        // GET: /StoreManager/Edit/5
-
         public ActionResult Edit(int id = 0)
         {
             Album album = db.Albums.Find(id);
@@ -74,9 +59,6 @@ namespace MvcMusicStore.Controllers
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
             return View(album);
         }
-
-        //
-        // POST: /StoreManager/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, Album album)
@@ -93,9 +75,6 @@ namespace MvcMusicStore.Controllers
             return View(album);
         }
 
-        //
-        // GET: /StoreManager/Delete/5
-
         public ActionResult Delete(int id = 0)
         {
             Album album = db.Albums.Find(id);
@@ -105,9 +84,6 @@ namespace MvcMusicStore.Controllers
             }
             return View(album);
         }
-
-        //
-        // POST: /StoreManager/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
