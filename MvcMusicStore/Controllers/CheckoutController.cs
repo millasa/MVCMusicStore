@@ -10,15 +10,11 @@ namespace MvcMusicStore.Controllers
         MusicStoreEntities storeDB = new MusicStoreEntities();
         const string PromoCode = "FREE";
 
-        //
-        // GET: /Checkout/AddressAndPayment
         public ActionResult AddressAndPayment()
         {
             return View();
         }
 
-        //
-        // POST: /Checkout/AddressAndPayment
         [HttpPost]
         public ActionResult AddressAndPayment(FormCollection values)
         {
@@ -53,8 +49,6 @@ namespace MvcMusicStore.Controllers
             }
         }
 
-        //
-        // GET: /Checkout/Complete
         public ActionResult Complete(int id)
         {
             // Validate customer owns this order
