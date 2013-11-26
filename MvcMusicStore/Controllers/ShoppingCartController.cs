@@ -23,8 +23,6 @@ namespace MvcMusicStore.Controllers
             return View(viewModel);
         }
 
-        //
-        // GET: /Store/AddToCart/5
         public ActionResult AddToCart(int id)
         {
             // Retrieve the album from the database
@@ -68,8 +66,6 @@ namespace MvcMusicStore.Controllers
             return Json(results);
         }
 
-        //
-        // GET: /ShoppingCart/CartSummary
         [ChildActionOnly]
         public ActionResult CartSummary()
         {
